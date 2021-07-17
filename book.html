@@ -1,0 +1,53 @@
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Book Lib</title>
+    <!-- favs -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/Favs/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Favs/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Favs/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Favs/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/Favs/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/Favs/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/Favs/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Favs/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/Favs/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/Favs/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/Favs/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/Favs/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/Favs/mstile-310x310.png" />
+
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <script type="text/javascript">
+      google.books.load();
+      function initialize() {
+        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        var index = document.URL.indexOf('?');
+        if (index > 0) {
+            var bookIsbn = document.URL.substring(index, document.URL.length).split("=")[1]
+            console.log(bookIsbn);
+        }
+        //viewer.load('ISBN:0738531367'); //for test purpose
+        viewer.load('ISBN:'+bookIsbn);
+      }
+      google.books.setOnLoadCallback(initialize);
+    </script>    
+  </head>
+  <body style="background-color: aliceblue;">
+    <div class="container mt-5 d-flex justify-content-center">
+
+      <div class="text-center" id="viewerCanvas" style="width: 1000px; height: 3000px"></div>
+    </div>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">    -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </body>
+</html>

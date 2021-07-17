@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Book Lib</title>
+  <!-- favs -->
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/Favs/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Favs/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Favs/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Favs/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/Favs/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/Favs/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/Favs/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Favs/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/Favs/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="&nbsp;" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/Favs/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/Favs/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/Favs/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/Favs/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/Favs/mstile-310x310.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <style>
+    /* The Overlay (background) */
+    .overlay {
+      /* Height & width depends on how you want to reveal the overlay (see JS below) */
+      height: 100%;
+      width: 0;
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      background-color: rgb(0, 0, 0);
+      /* Black fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/opacity */
+      overflow-x: hidden;
+      /* Disable horizontal scroll */
+      transition: 0.5s;
+      /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+
+    /* Position the content inside the overlay */
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      /* 25% from the top */
+      width: 100%;
+      /* 100% width */
+      text-align: center;
+      /* Centered text/links */
+      margin-top: 30px;
+      /* 30px top margin to avoid conflict with the close button on smaller screens */
+    }
+
+    /* The navigation links inside the overlay */
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      /* Display block instead of inline */
+      transition: 0.3s;
+      /* Transition effects on hover (color) */
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .overlay a:hover,
+    .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    /* Position the close button (top right corner) */
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+    @media screen and (max-height: 450px) {
+      .overlay a {
+        font-size: 20px
+      }
+
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- The overlay -->
+  <div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="https://developers.google.com/books/docs/overview" target="_blank">API </a>
+      <!-- <a href="#">Github</a> -->
+      <a href="https://github.com/sid86-dev/Book-Lib" target="_blank">Github</a>
+      <a href="https://www.linklerz.xyz/sid86" target="_blank">Connect</a>
+    </div>
+
+  </div>
+
+  <!-- Use any element to open/show the overlay navigation menu -->
+  <span onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 25px; margin-left: 15px;"
+      width="44" height="44" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+      <path
+        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+    </svg></span>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+  <div class="container">
+    <div id="title" class="center">
+
+      <h1 id="header" class="text-center mt-5">Book Lib <img src="/img/logo.png" class="img-fluid" style="width: 60px;"
+          alt=""></h1>
+      <div class="row my-5">
+        <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+          <input id="search-box" type="text" class="form-control py-3 text-center" style="font-size: x-large;"
+            placeholder="Search Books..." aria-label="Search">
+          <button id="search" class="btn btn-dark btn-lg py-3 " style="font-size: x-large;" onclick="">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="book-list">
+      <h2 class="text-center">Search Result</h2>
+      <div id="list-output" class="">
+        <div class="row">
+          <!-- card  -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
